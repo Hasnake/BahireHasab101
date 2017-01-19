@@ -1,0 +1,40 @@
+body
+{
+background-attachment: scroll;
+}
+h1
+{
+  margin: 0;
+  text-align: center;
+  color: blue;
+}
+p
+{
+  color:#FF0000;
+  font-weight: bold;
+}
+ol
+{
+  color:#FF0000;
+  font-weight: bold;
+  background-image: url("../assets/campfire-family.jpg");
+  background-repeat: no-repeat;
+}
+
+
+li
+{
+  color:rgba(255,0,0,0.7);
+  font-weight: bold;
+  font-style: italic;
+
+}
+a{
+font-size: 3em;
+font-weight: 900;
+}
+a:hover
+{
+  font-size: 3em;
+  background-color: yellow;
+}
