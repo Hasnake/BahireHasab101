@@ -1,6 +1,6 @@
 'use strict';
 
-var hours = ['ጾመ ነነዌ','ዓቢይ ጾም','ደብረ ዘይት','ሆሣዕና','ስቅለት','ትንሣኤ','ርክበ ካህናት',
+var አጽዋማት = ['ጾመ ነነዌ','ዓቢይ ጾም','ደብረ ዘይት','ሆሣዕና','ስቅለት','ትንሣኤ','ርክበ ካህናት',
 'ዕርገት','ዸራቅሊጦስ','ጾመ ሐዋርያት','ጾመ ድኅነት'];
 
 var round = function(number, precision) {
@@ -41,74 +41,74 @@ function Store(name, min, max, avgCupsperCust, avgTogoperCust) {
 }
 
 Store.prototype.numberOfCustomersInEachHour = function() {
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 0; i < አጽዋማት.length; i++) {
     this.customerEachHour.push(randomInteger(this.minCustPerHour, this.maxCustPerHour));
   }
 };
 
 Store.prototype.totalDailyCustomers = function() {
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 0; i < አጽዋማት.length; i++) {
     this.totalCustPerDay += this.customerEachHour[i];
   }
 };
 
 Store.prototype.cupsConsumedEachHour = function() {
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 0; i < አጽዋማት.length; i++) {
     this.cupsEachHour.push(round((this.customerEachHour[i] * this.averageCupsPerCust),1));
   }
 };
 
 Store.prototype.dailyCups = function() {
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 0; i < አጽዋማት.length; i++) {
     this.totalCupsPerDay += this.cupsEachHour[i];
   }
 };
 
 Store.prototype.togoLbsPerHour = function() {
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 0; i < አጽዋማት.length; i++) {
     // this.togoPoundsPerHour.push(parseFloat((this.customerEachHour[i] * this.averageTogoPoundsPerCust).toFixed(1)));
     this.togoPoundsPerHour.push(round(this.customerEachHour[i] * this.averageTogoPoundsPerCust, 1));
   }
 };
 
 Store.prototype.dailyLbs = function() {
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 0; i < አጽዋማት.length; i++) {
     this.totalTogoPoundsPerDay += round(this.togoPoundsPerHour[i], 1);
   }
 };
 
 Store.prototype.beansForCupsPerHour = function() {
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 0; i < አጽዋማት.length; i++) {
     this.BeansPerHourForMakingCups.push(round((this.cupsEachHour[i] / 16), 1));
   }
 };
 
 Store.prototype.beansForCupsDay = function() {
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 0; i < አጽዋማት.length; i++) {
     this.totalBeansPerDayForMakingCups += this.BeansPerHourForMakingCups[i];
   }
 };
 
 Store.prototype.amountOfBeansRequiredEachHour = function() {
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 0; i < አጽዋማት.length; i++) {
     this.beansPerHour.push(round((this.togoPoundsPerHour[i] + this.BeansPerHourForMakingCups[i]), 1));
   }
 };
 
 Store.prototype.amountOfBeansRequiredInaDay = function() {
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 0; i < አጽዋማት.length; i++) {
     this.totalBeansPerDay += this.beansPerHour[i];
   }
 };
 
 Store.prototype.amountOfEmployeesRequiredPerHour = function() {
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 0; i < አጽዋማት.length; i++) {
     this.employeesPerHour.push(Math.ceil(this.customerEachHour[i] / 30));
   }
 };
 
 Store.prototype.amountOfEmployeesRequiredInaDay = function() {
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 0; i < አጽዋማት.length; i++) {
     this.employeesPerDay += this.employeesPerHour[i];
   }
 };
@@ -129,11 +129,26 @@ Store.prototype.callAllMethods = function() {
 };
 
 
-new Store('Pike Place Market', 14, 35, 1.2, 0.34);
-new Store('Capitol Hill', 12, 28, 3.2, 0.03);
-new Store('Seattle Public Library', 9, 45, 2.6, 0.02);
-new Store('South Lake Union', 5, 18, 1.3, 0.04);
-new Store('Sea-Tac Airport', 28, 44, 1.1, 0.41);
+new Store('1Pike Place Market', 14, 35, 1.2, 0.34);
+new Store('2Capitol Hill', 12, 28, 3.2, 0.03);
+new Store('3Seattle Public Library', 9, 45, 2.6, 0.02);
+new Store('4South Lake Union', 5, 18, 1.3, 0.04);
+new Store('5Sea-Tac Airport', 28, 44, 1.1, 0.41);
+new Store('6Pike Place Market', 14, 35, 1.2, 0.34);
+new Store('7Capitol Hill', 12, 28, 3.2, 0.03);
+new Store('8Seattle Public Library', 9, 45, 2.6, 0.02);
+new Store('9South Lake Union', 5, 18, 1.3, 0.04);
+new Store('10Sea-Tac Airport', 28, 44, 1.1, 0.41);
+new Store('11Pike Place Market', 14, 35, 1.2, 0.34);
+new Store('12Capitol Hill', 12, 28, 3.2, 0.03);
+new Store('13Seattle Public Library', 9, 45, 2.6, 0.02);
+new Store('14South Lake Union', 5, 18, 1.3, 0.04);
+new Store('15Sea-Tac Airport', 28, 44, 1.1, 0.41);
+new Store('16Pike Place Market', 14, 35, 1.2, 0.34);
+new Store('17Capitol Hill', 12, 28, 3.2, 0.03);
+new Store('18Seattle Public Library', 9, 45, 2.6, 0.02);
+new Store('19South Lake Union', 5, 18, 1.3, 0.04);
+
 
 
 
@@ -166,7 +181,7 @@ CoffeeShope.dailyTotalBeansForEachStore = function() {
 };
 
 CoffeeShope.hourlyBeanRequiredInEachStore = function() {
-  for (var h = 0; h < hours.length; h++) {
+  for (var h = 0; h < አጽዋማት.length; h++) {
     var counter = 0;
     for (var s = 0; s < allStores.length; s++) {
       counter += allStores[s].beansPerHour[h];
@@ -182,7 +197,7 @@ CoffeeShope.amountOfDailyTotalEmployeeInEachStore = function() {
 };
 
 CoffeeShope.hourlyEmployeesInEachStore = function() {
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 0; i < አጽዋማት.length; i++) {
     var counter = 0;
     for (var j = 0; j < allStores.length; j++) {
       counter += allStores[j].employeesPerHour[i];
@@ -215,7 +230,7 @@ function makeAnElementWithText(parent, element, content) {
 }
 
 function loopForTableText(parent, element, content) {
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 0; i < አጽዋማት.length; i++) {
     makeAnElementWithText(parent, element, content[i]);
   }
 }
@@ -230,7 +245,7 @@ function makeRow(idName, tContent1, tContent2, tContent3) {
   tableEl.appendChild(rowEl);
 }
 
-makeRow('lbs-head',' ', 'Daily Location Total', hours);//The heading part for the PoundsOfBeans table.
+makeRow('lbs-head',' ', 'Daily Location Total', አጽዋማት);//The heading part for the PoundsOfBeans table.
 
 function makeTheStoreRows() {
   for (var i = 0; i < allStores.length; i++) {
@@ -242,7 +257,7 @@ makeTheStoreRows();
 
 makeRow('lbs-foot', 'Daily Total', round(CoffeeShope.dailyTotalBeans,1), CoffeeShope.hourlyTotalBeans);//The last row.
 
-makeRow('emp-head', ' ', 'Total', hours);
+makeRow('emp-head', ' ', 'Total', አጽዋማት);
 
 
 function makeTheEmployeeRows() {
