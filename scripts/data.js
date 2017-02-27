@@ -245,17 +245,17 @@ function makeRow(idName, tContent1, tContent2, tContent3) {
   tableEl.appendChild(rowEl);
 }
 
-makeRow('lbs-head',' ', 'Daily Location Total', አጽዋማት);//The heading part for the PoundsOfBeans table.
+makeRow('ሰንጠረዥ ርዕስ',' ', 'Daily Location Total', አጽዋማት);//The heading part for the አጽዋማትና በዓላት ሰንጠረዥ table.
 
 function makeTheStoreRows() {
   for (var i = 0; i < allStores.length; i++) {
-    makeRow('lbs-body', allStores[i].name,round(allStores[i].totalBeansPerDay,1), allStores[i].beansPerHour);
+    makeRow('ሰንጠረዥ አካል', allStores[i].name,round(allStores[i].totalBeansPerDay,1), allStores[i].beansPerHour);
   }
 }
 
 makeTheStoreRows();
 
-makeRow('lbs-foot', 'Daily Total', round(CoffeeShope.dailyTotalBeans,1), CoffeeShope.hourlyTotalBeans);//The last row.
+makeRow('ሰንጠረዥ ግርጌ', 'Daily Total', round(CoffeeShope.dailyTotalBeans,1), CoffeeShope.hourlyTotalBeans);//The last row.
 
 makeRow('emp-head', ' ', 'Total', አጽዋማት);
 
@@ -285,11 +285,11 @@ function zeroTotals() {
 }
 
 function handleNewLbsRow(newStore) {
-  makeRow('lbs-body', newStore.name, round(newStore.totalBeansPerDay, 1), newStore.beansPerHour);
+  makeRow('ሰንጠረዥ አካል', newStore.name, round(newStore.totalBeansPerDay, 1), newStore.beansPerHour);
   zeroTotals();
   coffeeShopeAllMethods();
-  document.getElementById('lbs-foot').innerHTML = '';
-  makeRow('lbs-foot', 'Daily Total', round(CoffeeShope.dailyTotalBeans,1), CoffeeShope.hourlyTotalBeans);
+  document.getElementById('ሰንጠረዥ ግርጌ').innerHTML = '';
+  makeRow('ሰንጠረዥ ግርጌ', 'Daily Total', round(CoffeeShope.dailyTotalBeans,1), CoffeeShope.hourlyTotalBeans);
 }
 
 function handleNewEmpRow(newStore) {
